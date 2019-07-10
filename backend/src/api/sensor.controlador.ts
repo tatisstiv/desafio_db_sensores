@@ -27,8 +27,7 @@ export async function getSensorId(req: Request, res: Response, next: NextFunctio
         if(sensor === null){
             res.status(404).end();
         } else {
-            const {valorLeitura, planta} = sensor;
-            res.json({valorLeitura, planta});
+            res.json(sensor);
         }
     } catch (error) {
         next(error);
