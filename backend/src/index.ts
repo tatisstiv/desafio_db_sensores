@@ -10,7 +10,7 @@ import { ObjectId } from 'bson';
  
         await connect(servidorMongoDB, {useNewUrlParser:true});
 
-        await SensorRepositorio.criar({
+     /*   await SensorRepositorio.criar({
             planta: 'Morango'
         });
         await SensorRepositorio.criar({
@@ -39,7 +39,7 @@ import { ObjectId } from 'bson';
         });
         await SensorRepositorio.criar({
             planta: 'Lavanda'
-        });
+        });*/
         
         
         //Iniciar Express

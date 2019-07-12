@@ -1,0 +1,27 @@
+import { Component, OnInit } from '@angular/core';
+import { registroService} from '../registro.service';
+import {Sensor } from '../sensor';
+
+@Component({
+  selector: 'app-plantaComponent',
+  templateUrl: './plantaComponent.component.html',
+  styleUrls: ['./plantaComponent.component.css']
+})
+export class PlantaComponentComponent implements OnInit {
+  displayedColumns: string[] = ['planta'];
+  dataSource: Sensor[] = [];
+
+  constructor(
+    private plantaServ: registroService
+  ) { }
+
+  ngOnInit() {
+    this.plantaServ.lerTodos().subscribe(
+      dados => this.dataSource = dados,
+      erro => {
+        console.log(erro);
+      }
+    );
+  }
+
+}
