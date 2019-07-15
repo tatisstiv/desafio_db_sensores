@@ -26,6 +26,9 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
+    "@angular/animations": "^8.1.1",
+    "@angular/cdk": "^8.0.2",
+    "@angular/material": "^8.0.2",
     "@types/cors": "^2.8.5",
     "cors": "^2.8.5",
     "dotenv": "^8.0.0",
