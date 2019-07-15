@@ -6,7 +6,7 @@ import { addRegistroComponent} from './addRegistroComponent/addRegistroComponent
 
 const routes: Routes = [
   { path: 'listar', component: PlantaComponentComponent},
-    {path: '**', redirectTo: 'listar'},
+    //{path: '**', redirectTo: 'listar'},
   {path: 'registros/add', component: addRegistroComponent}
 ]
 

@@ -19,7 +19,7 @@ export class registroService {
         return this.http.get<Sensor[]>(`${this.urlBase}`);
     }
 
-    addRegistro(registro: Registro) {
-      return this.http.post('http://localhost:3000/registro', registro);
+    addRegistro(registro: Registro): Observable<Registro> {
+      return this.http.post<Registro>('http://localhost:3000/registro', registro);
     }
 }
