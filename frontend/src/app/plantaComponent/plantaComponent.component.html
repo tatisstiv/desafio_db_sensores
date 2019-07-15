@@ -1,6 +1,13 @@
 <h2>Todos Sensores</h2>
-<ul>
-  <li *ngFor="let sensor of dataSource">
-  {{sensor.planta}}
-  </li>
-</ul>
+
+<table >
+  <tr>
+    <th>Id</th>
+    <th>Planta</th>
+  </tr>
+  <tr *ngFor="let sensor of dataSource">
+        <td>{{ sensor._id }}</td>
+        <td>{{ sensor.planta }}</td>
+        <td><button class="btn btn-default" (click)="adicionaReg(sensor)">Adicionar Registro</button></td>
+  </tr>
+</table>

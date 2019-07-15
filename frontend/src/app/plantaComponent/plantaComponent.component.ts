@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 import { registroService} from '../registro.service';
 import {Sensor } from '../sensor';
 
@@ -12,7 +13,8 @@ export class PlantaComponentComponent implements OnInit {
   dataSource: Sensor[] = [];
 
   constructor(
-    private plantaServ: registroService
+    private plantaServ: registroService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -22,6 +24,10 @@ export class PlantaComponentComponent implements OnInit {
         console.log(erro);
       }
     );
+  }
+
+  adicionaReg(sensor: Sensor){
+    this.router.navigate(['/registros/add', sensor])
   }
 
 }
