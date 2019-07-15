@@ -9,7 +9,7 @@ import {Sensor } from '../sensor';
   styleUrls: ['./plantaComponent.component.css']
 })
 export class PlantaComponentComponent implements OnInit {
-  displayedColumns: string[] = ['planta'];
+  displayedColumns: string[] = ['planta','id','actions'];
   dataSource: Sensor[] = [];
 
   constructor(

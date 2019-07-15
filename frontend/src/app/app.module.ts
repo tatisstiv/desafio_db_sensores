@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
-
+import { MatTableModule } from '@angular/material/table';
 import { AppComponent } from './app.component';
 import { RotasModule } from './rotas.module';
 import {PlantaComponentComponent} from './plantaComponent/plantaComponent.component';
@@ -19,7 +19,8 @@ import { addRegistroComponent } from './addRegistroComponent/addRegistroComponen
     RotasModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
