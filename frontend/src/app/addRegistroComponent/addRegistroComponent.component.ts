@@ -11,6 +11,7 @@ import { Sensor } from '../sensor';
   styleUrls: ['./addRegistroComponent.component.css']
 })
 export class addRegistroComponent implements OnInit {
+  registroString: string;
   registros: Registro[]
   registro: Registro = {sensor:this.route.snapshot.data.sensor, valorLeitura: 70} ;
   cadastro = new FormGroup({
@@ -29,7 +30,7 @@ export class addRegistroComponent implements OnInit {
   onSubmit(){
     this.registro.sensor ={_id: this.route.snapshot.params._id, planta: this.route.snapshot.params.planta }
     this.registroServ.addRegistro({valorLeitura: this.registro.valorLeitura, sensor: this.registro.sensor}).subscribe(
-      registro => this.registros.push(registro),
+      registro => this.registroString = JSON.stringify(registro),
       erro => console.log(erro));
   }
 
