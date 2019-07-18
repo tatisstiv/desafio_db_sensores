@@ -10,35 +10,45 @@ import { ObjectId } from 'bson';
  
         await connect(servidorMongoDB, {useNewUrlParser:true});
 
-      /*  await SensorRepositorio.criar({
-            planta: 'Morango'
+       /* await SensorRepositorio.criar({
+            planta: 'Morango',
+            status: 'Umidade ideal'
         });
         await SensorRepositorio.criar({
-            planta: 'Morango'
+            planta: 'Morango',
+            status: 'Umidade ideal'
         });
         await SensorRepositorio.criar({
-            planta: 'Cacto'
+            planta: 'Cacto',
+            status: 'Umidade ideal'
         });
         await SensorRepositorio.criar({
-            planta: 'Cacto'
+            planta: 'Cacto',
+            status: 'Umidade ideal'
         });
         await SensorRepositorio.criar({
-            planta: 'Cogumelo'
+            planta: 'Cogumelo',
+            status: 'Umidade ideal'
         });
         await SensorRepositorio.criar({
-            planta: 'Cogumelo'
+            planta: 'Cogumelo',
+            status: 'Umidade ideal'
         });
         await SensorRepositorio.criar({
-            planta: 'Violeta'
+            planta: 'Violeta',
+            status: 'Umidade ideal'
         });
         await SensorRepositorio.criar({
-            planta: 'Violeta'
+            planta: 'Violeta',
+            status: 'Umidade ideal'
         });
         await SensorRepositorio.criar({
-            planta: 'Lavanda'
+            planta: 'Lavanda',
+            status: 'Umidade ideal'
         });
         await SensorRepositorio.criar({
-            planta: 'Lavanda'
+            planta: 'Lavanda',
+            status: 'Umidade ideal'
         });*/
         
         

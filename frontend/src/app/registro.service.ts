@@ -22,4 +22,8 @@ export class registroService {
     addRegistro(registro: Registro): Observable<Registro> {
       return this.http.post<Registro>('http://localhost:3000/registro', registro);
     }
+
+    buscarRegPorSensor(sensor: Sensor) {
+      return this.http.get<Registro[]>(`http://localhost:3000/registro/sensor/${sensor._id}`);
+    }
 }

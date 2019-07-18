@@ -18,4 +18,17 @@ export class SensorRepositorio{
     static async lerTodos(): Promise<Sensor[]> {
         return SensorModel.find().exec();
     }
+    //atualizar
+    static async alterar(id: string, parametro: string, valor: string): Promise<Sensor> {
+        const sensor = await SensorModel.findById(id).exec();
+        if(sensor !== null){
+            sensor.set(parametro, valor);
+            return sensor.save();
+        }
+        else {
+            throw new Error('Sensor não encontrado');
+        }
+    }
+
+
 }

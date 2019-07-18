@@ -4,10 +4,12 @@
   <tr>
     <th>Id</th>
     <th>Planta</th>
+    <th>Status</th>
   </tr>
   <tr *ngFor="let sensor of dataSource">
         <td>{{ sensor._id }}</td>
         <td>{{ sensor.planta }}</td>
-        <td><button class="btn btn-default" (click)="adicionaReg(sensor)">Adicionar Registro</button></td>
+        <td>{{ sensor.status }}</td>
+        <td><button class="btn btn-default" (click)="verHistorico(sensor)">Ver histórico de registros</button></td>
   </tr>
 </table>

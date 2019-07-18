@@ -6,13 +6,13 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 import { AppComponent } from './app.component';
 import { RotasModule } from './rotas.module';
 import {PlantaComponentComponent} from './plantaComponent/plantaComponent.component';
-import { addRegistroComponent } from './addRegistroComponent/addRegistroComponent.component';
+import { getRegistroComponent } from './getRegistroComponent/getRegistroComponent.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PlantaComponentComponent,
-    addRegistroComponent
+    getRegistroComponent
   ],
   imports: [
     BrowserModule,

@@ -26,8 +26,8 @@ export class PlantaComponentComponent implements OnInit {
     );
   }
 
-  adicionaReg(sensor: Sensor){
-    this.router.navigate(['registros/add', sensor]);
+  verHistorico(sensor: Sensor){
+    this.router.navigate(['registros/get', sensor]);
   }
 
 }

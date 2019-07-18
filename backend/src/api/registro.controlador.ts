@@ -12,33 +12,33 @@ export async function postRegistro(req: Request, res: Response, next: NextFuncti
            
             if(sensor.planta === 'Morango'){
                 if(registro.valorLeitura < 60){
-                    res.send({"message": `Pouca umidade no sensor ${sensor}`});
+                    await SensorRepositorio.alterar(req.body.sensor, 'status', 'Umidade baixa');
                 } else if(registro.valorLeitura > 80){
-                    res.send({"message": `Muita umidade no sensor ${sensor}`});
+                    await SensorRepositorio.alterar(req.body.sensor, 'status', 'Umidade alta');
                 }
             } else if(sensor.planta === 'Cacto'){
                 if(registro.valorLeitura < 20){
-                    res.send({"message":`Pouca umidade no sensor ${sensor}`});
+                    await SensorRepositorio.alterar(req.body.sensor, 'status', 'Umidade baixa');
                 } else if(registro.valorLeitura > 50){
-                    res.send({"message": `Muita umidade no sensor ${sensor}`});
+                    await SensorRepositorio.alterar(req.body.sensor, 'status', 'Umidade alta');
                 }
             } else if(sensor.planta === 'Cogumelo'){
                 if(registro.valorLeitura < 80){
-                    res.send({"message": `Pouca umidade no sensor ${sensor}`});
+                    await SensorRepositorio.alterar(req.body.sensor, 'status', 'Umidade baixa');
                 } else if(registro.valorLeitura > 90){
-                    res.send({"message": `Muita umidade no sensor ${sensor}`});
+                    await SensorRepositorio.alterar(req.body.sensor, 'status', 'Umidade alta');
                 }
             } else if(sensor.planta === 'Violeta'){
                 if(registro.valorLeitura < 40){
-                    res.send({"message": `Pouca umidade no sensor ${sensor}`});
+                    await SensorRepositorio.alterar(req.body.sensor, 'status', 'Umidade baixa');
                 } else if(registro.valorLeitura > 80){
-                    res.send({"message": `Muita umidade no sensor ${sensor}`});
+                    await SensorRepositorio.alterar(req.body.sensor, 'status', 'Umidade alta');
                 }
             } else if(sensor.planta === 'Lavanda'){
                 if(registro.valorLeitura < 20){
-                    res.send({"messsage": `Pouca umidade no sensor ${sensor}`});
+                    await SensorRepositorio.alterar(req.body.sensor, 'status', 'Umidade baixa');
                 } else if(registro.valorLeitura > 30){
-                    res.send({"message": `Muita umidade no sensor ${sensor}`});
+                    await SensorRepositorio.alterar(req.body.sensor, 'status', 'Umidade alta');
                 }
             }
 

@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { PlantaComponentComponent } from './plantaComponent/plantaComponent.component';
-import { addRegistroComponent} from './addRegistroComponent/addRegistroComponent.component';
+import { getRegistroComponent} from './getRegistroComponent/getRegistroComponent.component';
 
 const routes: Routes = [
   { path: 'listar', component: PlantaComponentComponent},
     //{path: '**', redirectTo: 'listar'},
-  {path: 'registros/add', component: addRegistroComponent}
+  {path: 'registros/get', component: getRegistroComponent}
 ]
 
 @NgModule({

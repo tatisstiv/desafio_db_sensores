@@ -1,4 +1,5 @@
 
 export interface Sensor{
-    planta: string
+    planta: string,
+    status: string
 }

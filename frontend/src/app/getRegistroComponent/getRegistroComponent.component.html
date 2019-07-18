@@ -1,0 +1,14 @@
+<h2>Histórico de Registros</h2>
+
+<table >
+  <tr>
+    <th>Valor da Leitura</th>
+    <th>Horário</th>
+  </tr>
+  <tr *ngFor="let registro of dataSource">
+        <td>{{ registro.valorLeitura }}</td>
+        <td>{{ registro.created_at }}</td>
+  </tr>
+</table>
+
+<button onclick="window.location.href = 'http://localhost:4200/listar';">Voltar para lista de sensores</button>
