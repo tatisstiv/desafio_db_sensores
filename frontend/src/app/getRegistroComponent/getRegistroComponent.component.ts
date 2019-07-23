@@ -11,6 +11,7 @@ import { Sensor } from '../sensor';
   styleUrls: ['./getRegistroComponent.component.css']
 })
 export class getRegistroComponent implements OnInit {
+  displayedColumns: string[] = ['valorLeitura', 'created_at'];
   dataSource: Registro[] = [];
   registro: Registro = {sensor:this.route.snapshot.data.sensor, valorLeitura: 70, created_at: new Date('2019-07-18T03:24:00')} ;
 

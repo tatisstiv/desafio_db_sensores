@@ -10,7 +10,7 @@ import { ObjectId } from 'bson';
  
         await connect(servidorMongoDB, {useNewUrlParser:true});
 
-       /* await SensorRepositorio.criar({
+        /*await SensorRepositorio.criar({
             planta: 'Morango',
             status: 'Umidade ideal'
         });

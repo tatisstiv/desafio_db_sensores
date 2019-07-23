@@ -43,6 +43,8 @@ export async function postRegistro(req: Request, res: Response, next: NextFuncti
             }
 
             res.json(registro);
+            console.log(res.json(registro));
+            
         }
     }
     catch (error) {

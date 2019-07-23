@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { RotasModule } from './rotas.module';
 import {PlantaComponentComponent} from './plantaComponent/plantaComponent.component';
 import { getRegistroComponent } from './getRegistroComponent/getRegistroComponent.component';
+import { MatTableModule } from '@angular/material/table';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { getRegistroComponent } from './getRegistroComponent/getRegistroComponen
     RotasModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

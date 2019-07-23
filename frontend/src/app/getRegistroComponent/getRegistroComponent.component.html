@@ -1,6 +1,6 @@
 <h2>Histórico de Registros</h2>
 
-<table >
+<!-- <table >
   <tr>
     <th>Valor da Leitura</th>
     <th>Horário</th>
@@ -9,6 +9,23 @@
         <td>{{ registro.valorLeitura }}</td>
         <td>{{ registro.created_at }}</td>
   </tr>
-</table>
+</table> -->
 
-<button onclick="window.location.href = 'http://localhost:4200/listar';">Voltar para lista de sensores</button>
+<!-- <button onclick="window.location.href = 'http://localhost:4200/listar';">Voltar para lista de sensores</button> -->
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="valorLeitura">
+      <mat-header-cell *matHeaderCellDef> Valor Lido </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.valorLeitura}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="created_at">
+      <mat-header-cell *matHeaderCellDef> Criado em </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.created_at}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  <button class="button" onclick="window.location.href = 'http://localhost:4200/listar';">Voltar para lista de sensores</button>
