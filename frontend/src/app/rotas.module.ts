@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { PlantaComponentComponent } from './plantaComponent/plantaComponent.component';
 import { getRegistroComponent} from './getRegistroComponent/getRegistroComponent.component';
+import {inicioComponent} from './inicioComponent/inicio.component';
 
 const routes: Routes = [
+  { path:'inicio', component: inicioComponent},
   { path: 'listar', component: PlantaComponentComponent},
-  //{path: '**', redirectTo: 'listar'},
   {path: 'registros/get', component: getRegistroComponent}
 ]
 

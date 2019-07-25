@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { RotasModule } from './rotas.module';
 import {PlantaComponentComponent} from './plantaComponent/plantaComponent.component';
 import { getRegistroComponent } from './getRegistroComponent/getRegistroComponent.component';
+import {inicioComponent} from './inicioComponent/inicio.component';
 import { MatTableModule } from '@angular/material/table';
 
 
@@ -14,7 +15,8 @@ import { MatTableModule } from '@angular/material/table';
   declarations: [
     AppComponent,
     PlantaComponentComponent,
-    getRegistroComponent
+    getRegistroComponent,
+    inicioComponent
   ],
   imports: [
     BrowserModule,
