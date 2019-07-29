@@ -9,6 +9,8 @@ import { RotasModule } from './rotas.module';
 import {PlantaComponentComponent} from './plantaComponent/plantaComponent.component';
 import { getRegistroComponent } from './getRegistroComponent/getRegistroComponent.component';
 import {inicioComponent} from './inicioComponent/inicio.component';
+import {signupComponent} from './signupComponent/signup.component'
+import { from } from 'rxjs';
 
 
 
@@ -17,7 +19,8 @@ import {inicioComponent} from './inicioComponent/inicio.component';
     AppComponent,
     PlantaComponentComponent,
     getRegistroComponent,
-    inicioComponent
+    inicioComponent,
+    signupComponent
   ],
   imports: [
     BrowserModule,

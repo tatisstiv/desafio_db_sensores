@@ -4,8 +4,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { PlantaComponentComponent } from './plantaComponent/plantaComponent.component';
 import { getRegistroComponent} from './getRegistroComponent/getRegistroComponent.component';
 import {inicioComponent} from './inicioComponent/inicio.component';
+import { signupComponent } from './signupComponent/signup.component';
 
 const routes: Routes = [
+  {path: 'signup', component: signupComponent},
   { path:'inicio', component: inicioComponent},
   { path: 'listar', component: PlantaComponentComponent},
   {path: 'registros/get', component: getRegistroComponent}
