@@ -4,11 +4,23 @@
     <h2>
       Insira um nome para usuário e uma senha em seguida
     </h2>
-    <form action="/signup" method="POST">
-      <input name="username" type="text" /><br />
-      <input name="password" type="password" /><br />
-      <input type="submit" value="SignUp" />
-    </form>
+    <form #signup="ngForm" (submit)="onSubmit()">
+      <div>
+          <label for="username">Nome</label>
+          <input type="string" id='username' name="username"
+           required min="1"
+           [(ngModel)] = "signup.username"
+           >
+      </div>
+      <div>
+        <label for="password">Senha</label>
+        <input type="string" id='password' name="password"
+         required min="1"
+         [(ngModel)] = "signup.password"
+         >
+    </div>
+      <button type="submit" [disabled]="!signup.valid">Enviar</button>
+  </form>
 
   </body>
 </html>

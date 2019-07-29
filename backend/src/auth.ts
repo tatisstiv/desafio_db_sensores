@@ -4,22 +4,22 @@ import passportjwt from 'passport-jwt';
 
 const LocalStrategy = passportlocal.Strategy;
 
-passport.use('signup', new LocalStrategy((user,passwd,done) => {
+passport.use('signup', new LocalStrategy((username,password,done) => {
     //cadastrar o usuário na base de dados
-    console.log(`Cadastrado: ${user}`);
-    return done(undefined, {username:user,password:passwd});
+    console.log(`Cadastrado: ${username}`);
+    return done(undefined, {username:username,password:password});
 }));
 
-passport.use('login', new LocalStrategy((user,passwd,done) => {
+passport.use('login', new LocalStrategy((username,password,done) => {
     //buscar usuário na base de dados
     //validar usuário e senha
-    if (user !== 'usuario') {
+    if (username!== 'usuario') {
         return done(undefined, false, {message:'Usuário não encontrado'});
     }
-    if (passwd !== 'senha') {
+    if (password !== 'senha') {
         return done(undefined, false, {message:'Usuário ou senha iválidos'});
     }
-    return done(undefined, {username:user,password:passwd});
+    return done(undefined, {username:username,password:password});
 }));
 
 const JwtStrategy = passportjwt.Strategy;

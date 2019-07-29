@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Sensor } from './sensor';
 import { Registro } from './registro';
+import { signup } from './signup';
 
 @Injectable({
     providedIn: 'root'
@@ -25,5 +26,9 @@ export class registroService {
 
     buscarRegPorSensor(sensor: Sensor) {
       return this.http.get<Registro[]>(`http://localhost:3000/registro/sensor/${sensor._id}`);
+    }
+
+    addsignup(signup: signup): Observable<signup> {
+      return this.http.post<signup>('http://localhost:3000/signup', signup);
     }
 }

@@ -11,17 +11,27 @@ import {signup} from '../signup';
   styleUrls: ['./signup.component.css']
 })
 export class signupComponent implements OnInit {
-  //displayedColumns: string[] = ['valorLeitura', 'created_at'];
-  dataSource: signup[] = [];
+  signupString: string;
+  signups: signup[]
+  signup: signup = {username: "Miau", password: "ATATIEHUMAFOFURA"} ;
+  cadastro = new FormGroup({
+    username: new FormControl(this.signup.username),
+    password: new FormControl(this.signup.password)
+  });
 
   constructor(
     private signupServ: registroService,
-    private route: Router
+    private route: ActivatedRoute
   ){ }
-
   ngOnInit(){
-    console.log('entrou no signup');
 
-      }
+  }
+
+  onSubmit(){
+    this.signupServ.addsignup({username: this.signup.username, password: this.signup.password}).subscribe(
+      signup => this.signupString = JSON.stringify(signup),
+      erro => console.log(erro));
+  }
+
 
   }
