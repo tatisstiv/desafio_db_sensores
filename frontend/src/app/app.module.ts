@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { RotasModule } from './rotas.module';
 import {PlantaComponentComponent} from './plantaComponent/plantaComponent.component';
 import { getRegistroComponent } from './getRegistroComponent/getRegistroComponent.component';
-import {inicioComponent} from './inicioComponent/inicio.component';
+import {loginComponent} from './loginComponent/login.component';
 import {signupComponent} from './signupComponent/signup.component'
 import { from } from 'rxjs';
 
@@ -19,7 +19,7 @@ import { from } from 'rxjs';
     AppComponent,
     PlantaComponentComponent,
     getRegistroComponent,
-    inicioComponent,
+    loginComponent,
     signupComponent
   ],
   imports: [

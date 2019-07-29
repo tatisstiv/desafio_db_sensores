@@ -2,25 +2,25 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { registroService } from '../registro.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import {inicio} from '../inicio';
+import {login} from '../login';
 
 
 @Component({
-  selector: 'app-inicioComponent',
-  templateUrl: './inicio.component.html',
-  styleUrls: ['./inicio.component.css']
+  selector: 'app-loginComponent',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class inicioComponent implements OnInit {
+export class loginComponent implements OnInit {
   //displayedColumns: string[] = ['valorLeitura', 'created_at'];
-  dataSource: inicio[] = [];
+  dataSource: login[] = [];
 
   constructor(
-    private inicioServ: registroService,
+    private loginServ: registroService,
     private route: Router
   ){ }
 
   ngOnInit(){
-    console.log('entrou no inicio');
+    console.log('entrou no login');
 
       }
 
