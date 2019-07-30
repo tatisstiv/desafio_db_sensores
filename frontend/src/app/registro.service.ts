@@ -29,6 +29,6 @@ export class registroService {
     }
 
     addsignup(signup: signup): Observable<signup> {
-      return this.http.post<signup>('http://localhost:3000/signup', signup);
+      return this.http.post<signup>('http://localhost:3000/auth/signup', signup);
     }
 }

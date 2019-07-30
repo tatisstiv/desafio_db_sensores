@@ -4,7 +4,8 @@ import errorhandler from 'errorhandler';
 import passport from 'passport';
 import {path as pathSensor, router as routerSensor} from './api/sensor.rota';
 import {path as pathRegistro, router as routerRegistro} from './api/registro.rota';
-import {router as routerAuth} from './auth.rotas';
+import {path as pathAuth, router as routerAuth} from './auth.rotas';
+import './auth';
 import cors from 'cors';
 
 const app = express();
@@ -18,7 +19,7 @@ app.use(passport.initialize());
 
 app.use(pathSensor, routerSensor);
 app.use(pathRegistro, routerRegistro);
-app.use( routerAuth);
+app.use(pathAuth, routerAuth);
 
 if (process.env.NODE_ENV !== "production") {
     app.use(errorhandler());

@@ -3,7 +3,7 @@ import passport from 'passport';
 import jwt from 'jsonwebtoken';
 
 export const router = Router();
-//export const path = '/';
+export const path = '/auth';
 
 router.post('/signup', passport.authenticate('signup', {session:false}), (req,res,next) => {
     res.json({user:req.user});

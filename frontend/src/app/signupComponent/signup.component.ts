@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { registroService } from '../registro.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import {signup} from '../signup';
@@ -11,12 +11,10 @@ import {signup} from '../signup';
   styleUrls: ['./signup.component.css']
 })
 export class signupComponent implements OnInit {
-  signupString: string;
-  signups: signup[]
-  signup: signup = {username: "Miau", password: "ATATIEHUMAFOFURA"} ;
+  signup: signup = {username: "username", password: "1234"} ;
   cadastro = new FormGroup({
-    username: new FormControl(this.signup.username),
-    password: new FormControl(this.signup.password)
+    username: new FormControl(this.signup.username, [Validators.required, Validators.minLength(1)]),
+    password: new FormControl(this.signup.password, [Validators.required, Validators.minLength(1)])
   });
 
   constructor(
@@ -29,7 +27,7 @@ export class signupComponent implements OnInit {
 
   onSubmit(){
     this.signupServ.addsignup({username: this.signup.username, password: this.signup.password}).subscribe(
-      signup => this.signupString = JSON.stringify(signup),
+      signup => console.log(JSON.stringify(signup)),
       erro => console.log(erro));
   }
 
