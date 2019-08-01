@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 import { MatTableModule } from '@angular/material/table';
 
@@ -10,7 +10,7 @@ import {PlantaComponentComponent} from './plantaComponent/plantaComponent.compon
 import { getRegistroComponent } from './getRegistroComponent/getRegistroComponent.component';
 import {loginComponent} from './loginComponent/login.component';
 import {signupComponent} from './signupComponent/signup.component'
-import { from } from 'rxjs';
+import { TokenInterceptor } from './token.interceptor';
 
 
 
@@ -28,10 +28,16 @@ import { from } from 'rxjs';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    MatTableModule
+    MatTableModule,
 
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

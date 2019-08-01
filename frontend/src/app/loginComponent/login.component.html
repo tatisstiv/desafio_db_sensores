@@ -1,14 +1,27 @@
 <html>
   <body>
     <h1>Controle de umidade</h1>
-    <form action="/login" method="POST">
-      <input name="username" type="text" /><br />
-      <input name="password" type="password" /><br />
-      <input type="submit" value="login" />
+    <h2>Login</h2>
+    <form #login="ngForm" (submit)="onSubmit()">
+        <div>
+            <label for="username">Nome</label>
+            <input type="string" id='username' name="username"
+             required minlength="1"
+             [(ngModel)] = "signup.username"
+             >
+        </div>
+        <div>
+          <label for="password">Senha</label>
+          <input type="password" id='password' name="password"
+           required minlength="1"
+           [(ngModel)] = "signup.password"
+           >
+      </div>
+        <button type="submit" [disabled]="!login.valid">Enviar</button>
     </form>
 
     <p>
-      <a href="/users/forgot">Esqueceu sua senha?</a> | <a href="/users/signup">Não possui cadastro?</a>
+      <a href="/users/forgot">Esqueceu sua senha?</a> | <a href="/signup">Não possui cadastro?</a>
       <!-- falta colocar links pros itens de esquecer ou cadastrar -->
     </p>
   </body>

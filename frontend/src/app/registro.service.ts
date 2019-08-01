@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, VirtualTimeScheduler } from 'rxjs';
 import { Sensor } from './sensor';
 import { Registro } from './registro';
 import { signup } from './signup';
@@ -30,5 +30,9 @@ export class registroService {
 
     addsignup(signup: signup): Observable<signup> {
       return this.http.post<signup>('http://localhost:3000/auth/signup', signup);
+    }
+
+    fazerLogin(signup: signup): Observable<any>{
+      return this.http.post('http://localhost:3000/auth/login', signup);
     }
 }

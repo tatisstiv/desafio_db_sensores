@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import * as controlador from './sensor.controlador';
+import passport = require('passport');
 
 export const router = Router();
 export const path = '/sensor';

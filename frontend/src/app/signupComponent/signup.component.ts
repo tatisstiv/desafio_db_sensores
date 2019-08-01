@@ -19,7 +19,7 @@ export class signupComponent implements OnInit {
 
   constructor(
     private signupServ: registroService,
-    private route: ActivatedRoute
+    private router: Router
   ){ }
   ngOnInit(){
 
@@ -27,7 +27,7 @@ export class signupComponent implements OnInit {
 
   onSubmit(){
     this.signupServ.addsignup({username: this.signup.username, password: this.signup.password}).subscribe(
-      signup => console.log(JSON.stringify(signup)),
+      signup => this.router.navigate(['/listar']),
       erro => console.log(erro));
   }
 

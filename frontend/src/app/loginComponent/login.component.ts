@@ -1,8 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { registroService } from '../registro.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import {login} from '../login';
+import { signup } from '../signup';
 
 
 @Component({
@@ -11,17 +12,26 @@ import {login} from '../login';
   styleUrls: ['./login.component.css']
 })
 export class loginComponent implements OnInit {
-  //displayedColumns: string[] = ['valorLeitura', 'created_at'];
-  dataSource: login[] = [];
+  signup: signup = {username: "username", password: "1234"} ;
+  login = new FormGroup({
+    username: new FormControl(this.signup.username, [Validators.required, Validators.minLength(1)]),
+    password: new FormControl(this.signup.password, [Validators.required, Validators.minLength(1)])
+  })
 
   constructor(
     private loginServ: registroService,
-    private route: Router
+    private router: Router
   ){ }
 
   ngOnInit(){
-    console.log('entrou no login');
-
-      }
 
   }
+
+  onSubmit(){
+    this.loginServ.fazerLogin({username: this.signup.username, password: this.signup.password}).subscribe(
+      token => {localStorage.setItem('token', token.token);
+      this.router.navigate(['/listar'])},
+      erro => console.log(erro));
+  }
+
+}
